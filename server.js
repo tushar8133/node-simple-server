@@ -14,23 +14,6 @@ var server = http.createServer(function(req, res){
 
 	req.on('end', function(){
 
-		/*var clientData = {
-			'path': parsedUrl,
-			'query': parsedUrl.query,
-			'method': req.method.toLowerCase(),
-			'header': req.headers,
-			'payload': payload
-		}
-
-		if(req.url == "/"){
-			res.writeHead(200, {'Content-Type':'application/json'});
-			res.write(JSON.stringify(clientData));
-			res.end();
-			return;
-		}
-
-		console.log(clientData);*/
-		
 		var router = pageRouter(req.url);
 		
 		res.writeHead(200, {'Content-Type':'text/html'});
@@ -42,9 +25,6 @@ var server = http.createServer(function(req, res){
 			res.write(err);
 			res.end();
 		})
-		
-
-
 
 	});
 
